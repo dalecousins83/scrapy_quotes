@@ -14,7 +14,7 @@ class QuoteSpider(scrapy.Spider):
 
         for quote in quotes:
             text = quote.css("span.text::text").get()
-            author = quote.css("span small.author::text")
+            author = quote.css("span small.author::text").get()
 
             yield{
                 "text": text,
